@@ -10,3 +10,7 @@ This repository houses a web Scraping and Flask project to consolidate informati
 The scrape code gathers various pieces of information, images, and urls from different websites with information on Mars, and stores the return value in Mongo as a Python dictionary.  MongoDB with Flask (jinja) templating feeds into a HTML page that displays all of the information that was scraped from the URLs listed below. 
 
 Initial scraping and code building was done using Jupyter Notebook, BeautifulSoup, Pandas, and Splinter. 
+
+
+### Additional Copyright
+The opening image was taken from an [article](https://bgr.com/2017/07/13/nasa-mars-mission-no-money-to-land/) on the BGE news and commentary website. 
