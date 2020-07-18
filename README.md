@@ -11,6 +11,25 @@ The scrape code gathers various pieces of information, images, and urls from dif
 
 Initial scraping and code building was done using Jupyter Notebook, BeautifulSoup, Pandas, and Splinter. 
 
+|Information Section|Source|Link|
+|:---:|:---:|:---:|
+|Latest Mars News|NASA Mars Exploration Program|https://mars.nasa.gov/news/|
+|Featured Mars Image |NASA Mars Exploration Program|https://mars.nasa.gov ("Image of the Week")| 
+|Current Weather on Mars|@MarsWxReport Twitter account (InSight updates from the REMS weather instrument aboard the Mars Curiosity rover)|https://twitter.com/marswxreport?lang=en|
+|Mars Facts| Space Facts online|https://space-facts.com/mars/|
+|Mars Hemispheres|The Planetary Society|https://www.planetary.org/blogs/guest-blogs/bill-dunford/20140203-the-faces-of-mars.html|
+|Mars Hemispheres alternate code|US Geological Survey|https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars|
+|Mars Opportunity Comic|Squarespace Images|https://images.squarespace-cdn.com/content/v1/53924fa8e4b0e30215363474/1550692066119-F2SK4DCJW6Z1KQV0PUB9/ke17ZwdGBToddI8pDm48kPx25wW2-RVvoRgxIT6HShBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpx0Qh3eD5PfZ_nDR0M7OIGaTx-0Okj4hzQeRKYKbt7WfTYFScRKDTW78PcnUqBGqX8/blog2.png/|
+
+
+## Flask app versions & Installation
+
+### 1) Local deployment w/a local MongoDB database (using splinter)
+details coming soon
+
+### 2) Local deployment w/ online Mongo Atlas database (using splinter)
+details coming soon
+
 
 ### Additional Copyright
 The opening image was taken from an [article](https://bgr.com/2017/07/13/nasa-mars-mission-no-money-to-land/) on the BGE news and commentary website. 
