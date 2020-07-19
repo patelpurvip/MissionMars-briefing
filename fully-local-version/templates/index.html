@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css" media="screen">
+
+  <style>
+    .jumbotron{
+      background-image: url("https://www.nasa.gov/sites/default/files/thumbnails/image/pia23492.jpg");
+      background-size: cover;
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body class="test">
+  <style>
+    .test {
+      background-image: url("https://images.nasa.gov/images/landing_bg.jpg");
+      color:rgb(250, 250, 250)
+    }
+  </style>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <style>
+        .jumbotron {height: 500px;}
+      </style>
+      <h1>Mission to Mars</h1>
+      <h3>Explore what's to come</h3>
+      <p><a class="btn btn-primary btn-lg" href="./scrape/" role="button">Update Mars Data</a></p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h4><strong>Last Updated: </strong>{{stuff.timestamp}}</h4>
+    </div>
+    <style>
+      .container {
+        background-image: url("https://opengameart.org/sites/default/files/styles/medium/public/burnt_sand_light.png");
+        /* background-image: url("https://collinslandscape.com/wp-content/uploads/2018/02/Mansonry-Sand.png"); */
+      }
+    </style>
+
+    <div class="row col-md-12" id="mars-news">
+      <div class="col-md-12">
+        <h2>
+          <a class='link' target=blank href="https://mars.nasa.gov/news">
+            <strong>Latest Mars News:</strong>
+          </a>
+        </h2>
+        <h3 class="heading">{{ stuff.first_title }}</h4>
+        <h5><strong>{{ stuff.first_paragraph }}</strong></h5>
+      </div>
+    </div>
+
+    <hr>
+    <hr>
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="card">
+          <h2 class="card-title"><strong>Featured Mars Image: </strong></h2>
+          <h2 class=card-body>{{ stuff.featured_image_name }}
+            <a target=blank href={{stuff.featured_image_url}}>
+              <img class=card-img-top src={{stuff.featured_image_url}} class="img">
+            </a>
+          </h2>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="row">
+          <div class="card">
+            <h3 class="card-title"><strong>Current Weather on Mars</strong></h3>
+            <h6 class="card-body">{{stuff.weather}}
+              <a class='link' target='blank' href='https://twitter.com/marswxreport'>
+                <strong>@MarsWxReport on Twitter</strong>
+              </a>
+            </h6>
+            <!-- <p class="card-body"><strong>Weather Report from @MarsWxReport is blocked from scraping by Twitter. This section will be updated when developer access has been approved by Twitter.</stong></p> -->
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="card">
+            <h3 class="card-title"><strong>Mars Facts</strong></h3>
+            {{ stuff.facts_table | safe }}
+            <!-- <table border="1" class="dataframe">  <thead>    <tr style="text-align: right;">      <th></th>      <th>Measurement</th>      <th>Value</th>    </tr>  </thead>  <tbody>    <tr>      <th>0</th>      <td>Equatorial Diameter:</td>      <td>6,792 km</td>    </tr>    <tr>      <th>1</th>      <td>Polar Diameter:</td>      <td>6,752 km</td>    </tr>    <tr>      <th>2</th>      <td>Mass:</td>      <td>6.39 × 10^23 kg (0.11 Earths)</td>    </tr>    <tr>      <th>3</th>      <td>Moons:</td>      <td>2 (Phobos &amp; Deimos)</td>    </tr>    <tr>      <th>4</th>      <td>Orbit Distance:</td>      <td>227,943,824 km (1.38 AU)</td>    </tr>    <tr>      <th>5</th>      <td>Orbit Period:</td>      <td>687 days (1.9 years)</td>    </tr>    <tr>      <th>6</th>      <td>Surface Temperature:</td>      <td>-87 to -5 °C</td>    </tr>    <tr>      <th>7</th>      <td>First Record:</td>      <td>2nd millennium BC</td>    </tr>    <tr>      <th>8</th>      <td>Recorded By:</td>      <td>Egyptian astronomers</td>    </tr>  </tbody></table> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr>
+    <hr>
+    <div class="row">
+      <!-- <div class="col-lg-12"> -->
+      <a class='link' href="hemispheres">
+        <h2><strong>Mars Hemispheres: full images</strong></h2>
+        <style>.link {margin-left: 5px; color: rgb(157, 235, 235);}</style>
+      </a>
+    </div>
+    <div class="row">
+      {% for i in stuff.hemispheres %}
+        <div class="card col-lg-3">
+          <h5 class="card-title"><strong>{{i.title}}</strong></h5>
+          <div class="card-body">
+            <a target=blank href={{i.img_url}}>
+              <img width="100%" height="95%" class="card-img-top img-thumbnail-small" src={{i.img_url}}>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <hr>
+    <hr>
+    <div class="row col-lg-12">
+      <br>
+      <div class="col-lg-8">
+        <h3><strong>OBJECTIVE 1: "Operation Oppy"</strong></h3>
+        <br>
+        <h4>TARGET:</h4>
+        <h5>Find the final resting place of the Mars Opportunity rover, and present Oppy with the Global Medal of Freedom for it's 15 Earth year (8 Martian years) service to humanity.</h5>
+      </div>
+      <div class="col-lg-4 img-thumbnail-small">
+        <img width="100%" height="95%" src="https://images.squarespace-cdn.com/content/v1/53924fa8e4b0e30215363474/1550692066119-F2SK4DCJW6Z1KQV0PUB9/ke17ZwdGBToddI8pDm48kPx25wW2-RVvoRgxIT6HShBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpx0Qh3eD5PfZ_nDR0M7OIGaTx-0Okj4hzQeRKYKbt7WfTYFScRKDTW78PcnUqBGqX8/blog2.png">
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer font-small pt-4">
+    <style>
+      .page-footer {
+        color: #ffffff;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+      }
+    </style>
+    <p><strong>PPatel - Data Analytics Bootcamp, Tec de Monterrey 2020 (Monterrey, Mexico)
+      </strong></p>
+  </footer>
+</body>
+
+</html>
+
