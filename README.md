@@ -27,6 +27,8 @@ Initial scraping and code building was done using Jupyter Notebook, BeautifulSou
 ### 1) Local deployment w/a local MongoDB database (using splinter)
 The original version is designed to store information collected from the scrape in a local mongo database, and to run the app deploying the webpage locally, through Flask.  The scrape (initiated by clicking the scrape button on the webpage while flask is running the app) is run through Chromedriver. Chromedriver visits each url in the scrape code, scrapes the requested information, stores it locally in MongoDB, and closes out.  Mongo then provides the information from the latest scrape to the webpage via Flask while the Flask app is running locally. 
 
+To run the local version, you will first need to make sure you have MongoDB installed on your local computer and set up to recieve and store information from apps run from your terminal. 
+
 ### 2) Local deployment w/ online Mongo Atlas database (using splinter)
 details coming soon
 
