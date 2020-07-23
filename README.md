@@ -25,12 +25,22 @@ Initial scraping and code building was done using Jupyter Notebook, BeautifulSou
 ## Flask app versions & Installation
 
 ### 1) Local deployment w/a local MongoDB database (using splinter)
+run file: app_local.py
+folder: fully-local-version
+
 The original version is designed to store information collected from the scrape in a local mongo database, and to run the app deploying the webpage locally, through Flask.  The scrape (initiated by clicking the scrape button on the webpage while flask is running the app) is run through Chromedriver. Chromedriver visits each url in the scrape code, scrapes the requested information, stores it locally in MongoDB, and closes out.  Mongo then provides the information from the latest scrape to the webpage via Flask while the Flask app is running locally. 
 
-To run the local version, you will first need to make sure you have MongoDB installed on your local computer and set up to recieve and store information from apps run from your terminal. 
+To run the local version, you will first need to make sure you have MongoDB installed on your local computer and set up to recieve and store information from apps run from your terminal (and replace your local connection path in app_local.py, line 8). Run the app_local.py file in your terminal, and you can run the file in your web browser on your http://localhost:8000/ port. If any portion of the scrape code fails to work, alternate code has been provided for most of the scrape sections in the mars_data_scrape.py file.
+
+You will also need to provide your own Twitter developer keys to run the Mars Weather portion of the scrape, and save them as environment variables in a .env file.  If you do not have a developer account, an alternate scrape code has been provided (currently commented out) in the mars_data_scrape.py file. 
 
 ### 2) Local deployment w/ online Mongo Atlas database (using splinter)
-details coming soon
+run file: app2.py
+folder: local-with_MongoAtlas
+
+The second version uses the same code as the first, and also runs locally, as detailed above.  The only change is that instead of saving the scrape data on a local Mongo database, the data is scraped into an online db via Mongo Atlas. To run this version, you will have to create a Mongo Atlas account to recieve the scrape information, and then make sure the Flask app (app2.py) can access Atlas through your personal password (which you can save in the same .env file as your Twitter keys).
+
+(and populating the local data into the HTML files through Flask), 
 
 
 ### Additional Copyright
