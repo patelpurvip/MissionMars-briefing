@@ -48,11 +48,12 @@ As with the fully local version, run the app_local.py file in your terminal, and
 
 
 ### 3) Public deployment via Heroku
-run file: app3.py
+run file: app3.py (calling mars_data_scrape2.py)
 
 deployment site: https://mars-data-scrape.herokuapp.com/
 
 (coming soon)
 
+-----
 ### Additional Copyright
 The opening image was taken from an [article](https://bgr.com/2017/07/13/nasa-mars-mission-no-money-to-land/) on the BGE news and commentary website. 
