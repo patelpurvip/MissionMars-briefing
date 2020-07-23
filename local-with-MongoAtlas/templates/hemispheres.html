@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><strong>Mission to Mars</strong></title>
+  <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css" media="screen">
+  <style>
+    .jumbotron{
+      background-image: url("https://solarsystem.nasa.gov/internal_resources/144/");
+      background-size: cover;
+      color: white;
+      text-align: bottom
+    }
+  </style>
+</head>
+
+<body class="test">
+  <style>
+    .test {background-image: url("https://images.nasa.gov/images/landing_bg.jpg")}
+  </style>
+  <div class="jumbotron">
+    <h2><strong>Mars Hemispheres</strong></h2>
+    <a class=link href="../">Mars Data Mainpage
+      <style>
+        .link {color: white;}
+      </style>
+    </a>
+  </div>
+  <div class="container">
+    <!-- <style>
+      .container-fluid {color: #ffffff; align-content: center;}
+    </style> -->
+    <div class="row">
+      {% for i in stuff.hemispheres %}
+        <div class="card col-xl-6 col-lg-6 col-md-6 col-sm-6">
+          <h3 class="card-title"><strong>{{i.title}}</strong></h3>
+          <div class="card-body">
+            <a target=blank href={{i.img_url}}>
+              <img width="100%" height="100%" class="img img-thumbnail-small" src={{i.img_url}}>
+            </a> 
+          </div> 
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <footer class="page-footer font-small pt-4">
+    <style>
+      .page-footer {
+        color: #ffffff;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+      }
+    </style>
+    <p><strong>PPatel - Data Analytics Bootcamp, Tec de Monterrey 2020 (Monterrey, Mexico)
+      </strong></p>
+  </footer> 
+</body>
+
+</html>
+

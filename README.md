@@ -40,7 +40,7 @@ You will also need to provide your own Twitter developer keys to run the Mars We
 ### 2) Local deployment w/ online Mongo Atlas database (using splinter)
 run file: app2.py
 
-folder: local-with_MongoAtlas
+folder: local-with-MongoAtlas
 
 The second version uses the same code as the first, and also runs locally, as detailed above.  The only change is that instead of saving the scrape data on a local Mongo database, the data is scraped into an online db via Mongo Atlas. To run this version, you will have to create a Mongo Atlas account (or other online no-SQL DB of choice) to recieve the scrape information, and then make sure the Flask app (app2.py) can access Atlas with your personal `password`, which you can save in the same .env file as your Twitter keys. You will also need to replace the uri path with your Atlas uri path in the app2.py file, line 14.
 
@@ -53,6 +53,7 @@ run file: app3.py (calling mars_data_scrape2.py)
 deployment site: https://mars-data-scrape.herokuapp.com/
 
 (coming soon)
+
 
 -----
 ### Additional Copyright
