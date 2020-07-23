@@ -39,9 +39,9 @@ You will also need to provide your own Twitter developer keys to run the Mars We
 run file: app2.py
 folder: local-with_MongoAtlas
 
-The second version uses the same code as the first, and also runs locally, as detailed above.  The only change is that instead of saving the scrape data on a local Mongo database, the data is scraped into an online db via Mongo Atlas. To run this version, you will have to create a Mongo Atlas account to recieve the scrape information, and then make sure the Flask app (app2.py) can access Atlas through your personal password (which you can save in the same .env file as your Twitter keys).
+The second version uses the same code as the first, and also runs locally, as detailed above.  The only change is that instead of saving the scrape data on a local Mongo database, the data is scraped into an online db via Mongo Atlas. To run this version, you will have to create a Mongo Atlas account (or other online no-SQL DB of choice) to recieve the scrape information, and then make sure the Flask app (app2.py) can access Atlas with your personal `password`, which you can save in the same .env file as your Twitter keys. You will also need to replace the uri path with your Atlas uri path in the app2.py file, line 14.
 
-(and populating the local data into the HTML files through Flask), 
+As with the fully local version, run the app_local.py file in your terminal, and you can open the page in your web browser on your http://localhost:8000/ port. The scrape function will run by clicking the "Scrape" button. The data will scrape to the Atlas database, and populate the data into the HTML files through Flask. 
 
 
 ### Additional Copyright
