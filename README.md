@@ -44,5 +44,8 @@ The second version uses the same code as the first, and also runs locally, as de
 As with the fully local version, run the app_local.py file in your terminal, and you can open the page in your web browser on your http://localhost:8000/ port. The scrape function will run by clicking the "Scrape" button. The data will scrape to the Atlas database, and populate the data into the HTML files through Flask. 
 
 
+### 3) Public deployment via Heroku
+(coming soon)
+
 ### Additional Copyright
 The opening image was taken from an [article](https://bgr.com/2017/07/13/nasa-mars-mission-no-money-to-land/) on the BGE news and commentary website. 
