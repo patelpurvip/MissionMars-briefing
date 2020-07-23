@@ -1,7 +1,7 @@
 # Mission to Mars
 
 ## Overview
-This repository houses a web Scraping and Flask project to consolidate information on Mars from various webpages.  Results of the scrape are saved in MongoDB and displayed in one page via Flask, with a link to a separate page for images of the planet's hemispheres. 
+This repository houses a web Scraping and Flask project to consolidate information on Mars from various webpages.  Results of the scrape are saved in MongoDB and displayed in one page via Flask, with a link to a separate page for images of the planet's hemispheres. Original scrape codes were developed in the jupyter notebooks housed in the repository, before being transferred into the python scrape files.
 
 ![Image](images/nasa-mars-mission-plan.png)
 
