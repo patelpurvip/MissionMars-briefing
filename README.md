@@ -49,6 +49,7 @@ As with the fully local version, run the app_local.py file in your terminal, and
 
 ### 3) Public deployment via Heroku
 run file: app3.py
+
 deployment site: https://mars-data-scrape.herokuapp.com/
 
 (coming soon)
