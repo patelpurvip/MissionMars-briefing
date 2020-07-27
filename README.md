@@ -53,7 +53,7 @@ run file: app3.py (calling mars_data_scrape2.py)
 
 deployment site: https://mars-data-scrape.herokuapp.com/
 
-(coming soon)
+The intention of this final version was to deploy the Flask app publicly via Heroku.  This version, like version 2, still makes use of Mongo Atlas to store the scraped information through an online service and the feed it into the final webpage. However, the main difficulty was the dependance of prior models on the chromedriver to scrape the content from the websites listed above.  One option I had considered was to see if I could get a headless driver to work with selenium to scrape the necessary information.  However, the easier option was to change the code to use `urllib.request` instead of a webdriver.  However, request works a bit differently and does not always return the full code on a given webpage, especially with code fed to the page through Javascript instead being written of directly into the webpage's HTML.  Due to this, the scrape code had to be adjusted in some parts of the scrape in order to return content. 
 
 
 -----
