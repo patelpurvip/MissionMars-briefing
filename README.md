@@ -13,6 +13,20 @@ The scrape code gathers various pieces of information, images, and urls from dif
 
 Initial scraping and code building was done using Jupyter Notebook, BeautifulSoup, Pandas, and Splinter. 
 
+## Scrape Features & Information
+The scrape is initiated through a button at the center of the page's Jumbotron/header.  The date and time of the last scrape used to gather the data currently displayed is shown at the bottom of the jumbotron. 
+
+The final Flask app deploys a webpage that will feed the information from the scrape into several sections:
+1. Latest Mars News
+2. Featured Mars Image
+3. Mars Weather
+4. a Mars Facts table
+5. Thumbnail images of Mars Hemispheres
+
+A link from the "Mars Hemispheres" heading will take you to a second page with larger images of each hemisphere, linked to the full online images. A link on the upper lefthand corner of the hemispheres page ("Mars Data Mainpage") will return you to the main scrape page. 
+
+The following table lists the sources of information for each section of the scrape:
+
 |Information Section|Source|Link|
 |:---:|:---:|:---:|
 |Latest Mars News|NASA Mars Exploration Program|https://mars.nasa.gov/news/|
