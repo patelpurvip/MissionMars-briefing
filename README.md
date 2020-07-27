@@ -9,12 +9,12 @@ This repository houses a web Scraping and Flask project to consolidate informati
 
 
 ## Background
-The scrape code gathers various pieces of information, images, and urls from different websites with information on Mars, and stores the return value in Mongo as a Python dictionary.  MongoDB with Flask (jinja) templating feeds into a HTML page that displays all of the information that was scraped from the URLs listed below. 
+The scrape code gathers various pieces of information, images, and URLs from different websites with information on Mars, and stores the return value in Mongo as a Python dictionary.  MongoDB with Flask (jinja) templating feeds into a HTML page that displays all of the information that was scraped from the URLs listed below. 
 
-Initial scraping and code building was done using Jupyter Notebook, BeautifulSoup, Pandas, and Splinter. 
+Initial scraping and code building were done using Jupyter Notebook, BeautifulSoup, Pandas, and Splinter. 
 
 ## Scrape Features & Information
-The scrape is initiated through a button at the center of the page's Jumbotron/header.  The date and time of the last scrape used to gather the data currently displayed is shown at the bottom of the jumbotron. 
+The scrape is initiated through a button at the center of the page's Jumbotron/header.  The date and time of the last scrape used to gather the data currently on display are shown at the bottom of the jumbotron. 
 
 The final Flask app deploys a webpage that will feed the information from the scrape into several sections:
 1. Latest Mars News
@@ -23,7 +23,7 @@ The final Flask app deploys a webpage that will feed the information from the sc
 4. a Mars Facts table
 5. Thumbnail images of Mars Hemispheres
 
-A link from the "Mars Hemispheres" heading will take you to a second page with larger images of each hemisphere, linked to the full online images. A link on the upper lefthand corner of the hemispheres page ("Mars Data Mainpage") will return you to the main scrape page. 
+A link from the "Mars Hemispheres" heading will take you to a second page with larger images of each hemisphere, linked to the full online images. A link on the upper left-hand corner of the hemispheres page ("Mars Data Mainpage") will return you to the main scrape page. 
 
 The following table lists the sources of information for each section of the scrape:
 
@@ -45,11 +45,11 @@ run file: app_local.py
 
 folder: fully-local-version
 
-The original version is designed to store information collected from the scrape in a local mongo database, and to run the app deploying the webpage locally, through Flask.  The scrape (initiated by clicking the scrape button on the webpage while flask is running the app) is run through Chromedriver. Chromedriver visits each url in the scrape code, scrapes the requested information, stores it locally in MongoDB, and closes out.  Mongo then provides the information from the latest scrape to the webpage via Flask while the Flask app is running locally. 
+The original version is designed to store information collected from the scrape in a local mongo database, and to run the app deploying the webpage locally, through Flask.  The scrape (initiated by clicking the scrape button on the webpage while flask is running the app) is run through Chromedriver. Chromedriver visits each URL in the scrape code, scrapes the requested information, stores it locally in MongoDB, and closes out.  Mongo then provides the information from the latest scrape to the webpage via Flask while the Flask app is running locally. 
 
-To run the local version, you will first need to make sure you have MongoDB installed on your local computer and set up to recieve and store information from apps run from your terminal (and replace your local mongodb connection path in app_local.py, line 8). Run the app_local.py file in your terminal, and you can open the page in your web browser on your http://localhost:8000/ port. If any portion of the scrape code fails to work, alternate code has been provided for most of the scrape sections in the mars_data_scrape.py file.
+To run the local version, you will first need to make sure you have MongoDB installed on your local computer and set up to receive and store information from apps run from your terminal (and replace your local mongodb connection path in app_local.py, line 8). Run the app_local.py file in your terminal, and you can open the page in your web browser on your http://localhost:8000/ port. If any portion of the scrape code fails to work, alternate code has been provided for most of the scrape sections in the mars_data_scrape.py file.
 
-You will also need to provide your own Twitter developer keys to run the Mars Weather portion of the scrape, and save them as environment variables in a .env file.  If you do not have a developer account, an alternate scrape code has been provided (currently commented out) in the mars_data_scrape.py file. 
+You will also need to provide your own Twitter developer keys to run the Mars Weather portion of the scrape and save them as environment variables in a .env file.  If you do not have a developer account, an alternate scrape code has been provided (currently commented out) in the mars_data_scrape.py file. 
 
 
 ### 2) Local deployment w/ online Mongo Atlas database (using splinter)
@@ -57,7 +57,7 @@ run file: app2.py
 
 folder: local-with-MongoAtlas
 
-The second version uses the same code as the first, and also runs locally, as detailed above.  The only change is that instead of saving the scrape data on a local Mongo database, the data is scraped into an online db via Mongo Atlas. To run this version, you will have to create a Mongo Atlas account (or other online no-SQL DB of choice) to recieve the scrape information, and then make sure the Flask app (app2.py) can access Atlas with your personal `password`, which you can save in the same .env file as your Twitter keys. You will also need to replace the uri path with your Atlas uri path in the app2.py file, line 14.
+The second version uses the same code as the first, and also runs locally, as detailed above.  The only change is that instead of saving the scrape data on a local Mongo database, the data is scraped into an online database via Mongo Atlas. To run this version, you will have to create a Mongo Atlas account (or other online no-SQL DB of choice) to recieve the scrape information, and then make sure the Flask app (app2.py) can access Atlas with your personal `password`, which you can save in the same .env file as your Twitter keys. You will also need to replace the URI path with your Atlas URI path in the app2.py file, line 14.
 
 As with the fully local version, run the app_local.py file in your terminal, and you can open the page in your web browser on your http://localhost:8000/ port. The scrape function will run by clicking the "Scrape" button. The data will scrape to the Atlas database, and populate the data into the HTML files through Flask. 
 
@@ -67,9 +67,9 @@ run file: app3.py (calling mars_data_scrape2.py)
 
 deployment site: https://mars-data-scrape.herokuapp.com/
 
-The intention of this final version was to deploy the Flask app publicly via Heroku.  This version, like version 2, still makes use of Mongo Atlas to store the scraped information through an online service and the feed it into the final webpage. However, the main difficulty was the dependance of prior models on the chromedriver to scrape the content from the websites listed above.  One option I had considered was to see if I could get a headless driver to work with selenium to scrape the necessary information.  However, the easier option was to change the code to use `urllib.request` instead of a webdriver.  However, request works a bit differently and does not always return the full code on a given webpage, especially with code fed to the page through Javascript instead being written of directly into the webpage's HTML.  Due to this, the scrape code had to be adjusted in some parts of the scrape in order to return content. 
+The intention of this final version was to deploy the Flask app publicly via Heroku.  This version, like version 2, still makes use of Mongo Atlas to store the scraped information through an online service and then feed it into the final webpage. The main difficulty with deployment was the dependence of the prior models on Chromedriver to scrape the content from the websites listed above.  One option I had considered was to see if I could get a headless driver to work with selenium to scrape the necessary information, but the easier option was to change the code to use `urllib.request` instead of a webdriver.  However, request works a bit differently and does not always return the full code on a given webpage, especially with code fed to the page through Javascript instead being written of directly into the webpage's HTML.  Due to this, the scrape code had to be adjusted in some parts of the scrape in order to return content. 
 
-For example, one trade-off was that request will usually not return the first (most recent) article on the NASA Mars News webpage, but will return article 2 or article 4 pretty regularly.  I decided that this was acceptable enough for the funcionality in order to make the scrape work, even if I do not always have the MOST recent article displayed on the publicly deployed page.  The other big change in the code was with the "Mars Hemisphere" information, particularly the hemisphere images. The original code relied on webdriver functions such as `browser.find_link_by_partial_text()` or `browser.back()`.  I decided the easiest solution for the moment was to simply scrape the code from another site that would not require nagivating between pages within the scrape code loop.  Therfore, the public deployment takes the hemisphere information from the Planetary Society's page instead of the US Geological Survey's pages (both source URLs listed above). 
+For example, one trade-off was that request will usually not return the first (most recent) article on the NASA Mars News webpage, but will return article 2 or article 4 pretty regularly.  I decided that this was acceptable enough for the funcionality in order to make the scrape work, even if I do not always have the MOST recent article displayed on the publicly deployed page.  The other big necessary change in the scrape code was with the "Mars Hemisphere" information, particularly the hemisphere images. The original code relied on webdriver functions such as `browser.find_link_by_partial_text()` or `browser.back()`.  I decided the easiest solution for the moment was to simply scrape the code from another site that would not require nagivating between pages within the scrape code loop.  Therfore, the public deployment takes the hemisphere information from the Planetary Society's page instead of the US Geological Survey's pages (both source URLs listed above). 
 
 -----
 ### Additional Copyright
