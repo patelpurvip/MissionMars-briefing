@@ -73,4 +73,4 @@ For example, one trade-off was that request will usually not return the first (m
 
 -----
 ### Additional Copyright
-The opening image was taken from an [article](https://bgr.com/2017/07/13/nasa-mars-mission-no-money-to-land/) on the BGE news and commentary website. 
+The opening image was taken from an [article](https://bgr.com/2017/07/13/nasa-mars-mission-no-money-to-land/) on the BGE news and commentary website, written by Chris Smith on July 13th, 2017. 
