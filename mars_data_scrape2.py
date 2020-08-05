@@ -1,5 +1,7 @@
 from bs4 import BeautifulSoup as bs
 import urllib.request
+from splinter import Browser
+from splinter.exceptions import ElementDoesNotExist
 import pymongo
 import pandas as pd
 import datetime
